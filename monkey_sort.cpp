@@ -10,7 +10,7 @@ int arr[LENGTH];
 int ans[LENGTH];
 ll times = 0;
 
-void print_array(int *a) {
+void printArray(int *a) {
     for (int t = 0; t < LENGTH; t++) {
         if (t == LENGTH - 1)
             cout << a[t];
@@ -40,17 +40,16 @@ int main() {
                 break;
             }
         }
+
         if (isCorrect) {
             cout << "What a nice monkey!\n";
             break;
         }
-        times++;
+
         random_shuffle(arr, arr + LENGTH);
-        if (times == 1) {
-            cout << times << " time: ";
-        } else {
-            cout << times << " times: ";
-        }
+        ++times;
+
+        (times == 1) ? cout << times << " time: " : cout << times << " times: ";
         print_array(arr);
     }
 }
